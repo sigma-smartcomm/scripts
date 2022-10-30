@@ -1,0 +1,14 @@
+{
+    "name": "sigma-smartcomm/initializer",
+    "description": "Smartcomm initializer",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "laravel/sail": "^1.0.1"
+    },
+    "config": {
+        "lock": false
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
