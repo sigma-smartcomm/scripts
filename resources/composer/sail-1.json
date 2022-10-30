@@ -1,0 +1,13 @@
+{
+    "name": "sigma-smartcomm/sail-installer",
+    "type": "project",
+    "description": "laravel sail installer",
+    "require": {
+        "laravel/sail": "SAIL_VERSION"
+    },
+    "config": {
+        "lock": false
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
