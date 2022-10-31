@@ -1,9 +1,10 @@
 {
     "name": "sigma-smartcomm/sail-installer",
-    "type": "project",
-    "description": "laravel sail installer",
+    "description": "Laravel sail installer",
+    "type": "library",
+    "license": "MIT",
     "require": {
-        "laravel/sail": "SAIL_VERSION"
+        "laravel/sail": "^1.0.1"
     },
     "config": {
         "lock": false

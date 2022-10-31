@@ -34,18 +34,12 @@ if [ ! -f composer.json ]; then
     exit 1
 fi
 
-SAIL_VERSION=$(grep -o '"laravel/sail": "[^"]*' composer.json | grep -o '[^"]*$') > /dev/null || echo ""
-if [ -z "${SAIL_VERSION}" ]; then
-  echo "Laravel sail is not supported in this project."
-  exit 1;
-fi
-
 # Check sail exists, if not then init
 
 if ! [ -x "$(command -v vendor/bin/sail)" ]; then
   echo "Laravel sail not found, installing sail...."
-  curl https://raw.githubusercontent.com/sigma-smartcomm/scripts/main/resources/composer/sail-1.json | sed "s/SAIL_VERSION/$SAIL_VERSION/g"  > /tmp/sail-1.json
-  COMPOSER=/tmp/sail-1.json composer install --no-dev --working-dir=./
+  curl https://raw.githubusercontent.com/sigma-smartcomm/scripts/main/composer.json > /tmp/composer-sail-1.json
+  COMPOSER=/tmp/composer-sail-1.json composer install --no-dev --working-dir=./
   echo "Laravel sail installation done!"
   rm -f /tmp/sail-1.json
 fi
