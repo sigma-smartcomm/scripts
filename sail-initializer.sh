@@ -38,7 +38,7 @@ fi
 
 if ! [ -x "$(command -v vendor/bin/sail)" ]; then
   echo "Laravel sail not found, installing sail...."
-  curl https://raw.githubusercontent.com/sigma-smartcomm/scripts/main/composer.json > /tmp/composer-sail-1.json
+  curl https://raw.githubusercontent.com/sigma-smartcomm/scripts/main/resources/composer/init.json > /tmp/composer-sail-1.json
   COMPOSER=/tmp/composer-sail-1.json composer install --no-dev --working-dir=./
   echo "Laravel sail installation done!"
   rm -f /tmp/sail-1.json

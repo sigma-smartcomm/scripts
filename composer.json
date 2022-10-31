@@ -6,9 +6,6 @@
     "require": {
         "laravel/sail": "^1.0.1"
     },
-    "config": {
-        "lock": false
-    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
