@@ -54,16 +54,20 @@ if [ ! -f .env ]; then
     cp .env.example .env
 fi
 
+function success_message() {
+  echo "Successfully initialized."
+  echo "To run the application, run the following command:"
+  echo "./sail up -d"
+  echo "or"
+  echo "./sail up"
+}
+
 # Build
 vendor/bin/sail build
 vendor/bin/sail up -d
-vendor/bin/sail composer install --no-scripts
-
-vendor/bin/sail artisan key:generate
-vendor/bin/sail down
-
-echo "Successfully initialized."
-echo "To run the application, run the following command:"
-echo "./sail up -d"
-echo "or"
-echo "./sail up"
+vendor/bin/sail composer install --no-scripts \
+  && vendor/bin/sail artisan key:generate \
+  && vendor/bin/sail npm install \
+  && vendor/bin/sail npm run build \
+  && vendor/bin/sail down \
+  && success_message
